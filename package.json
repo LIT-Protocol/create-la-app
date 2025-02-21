@@ -1,6 +1,9 @@
 {
   "name": "create-la-app",
-  "version": "0.0.1",
+  "version": "0.0.3",
+  "bin": {
+    "create-la-app": "./scripts/scaffold-entry.js"
+  },
   "type": "module",
   "scripts": {
     "cli": "bun run scripts/cli.ts",
