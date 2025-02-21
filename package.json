@@ -1,0 +1,31 @@
+{
+  "name": "create-la-app",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "cli": "bun run scripts/cli.ts",
+    "dev": "chokidar './la-utils/**' './my-lit-action/**' './my-app/**' -c 'bun run build && bun run my-app/main.ts'",
+    "postbuild": "bun run ./scripts/postbuild.ts",
+    "build": "bun build ./my-lit-action/lit-action.ts --outdir ./dist --entry-naming lit-action.js --format iife"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "degit": "^2.8.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@lit-protocol/constants": "7.0.6",
+    "@lit-protocol/contracts-sdk": "7.0.5",
+    "@lit-protocol/lit-node-client": "7.0.5",
+    "@pinata/sdk": "2.1.0",
+    "@t3-oss/env-core": "^0.12.0",
+    "@types/inquirer": "^9.0.7",
+    "ethers": "5.7.2",
+    "inquirer": "^12.4.2",
+    "json-with-bigint": "^2.4.2",
+    "pino-caller": "^3.4.0",
+    "zod": "^3.24.2"
+  }
+}
