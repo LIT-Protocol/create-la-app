@@ -6,7 +6,9 @@ A development environment for building and testing Lit Protocol Actions. This pr
 
 ### TypeScript support out of the box for Lit Actions
 
-![TypeScript Support](./screenshots/ts.gif)
+![Lit.Actions](./screenshots/ts.gif)
+
+![Lit.Auth](./screenshots/ts-auth.png)
 
 ### CLI for basic setup to run Lit Action
 
