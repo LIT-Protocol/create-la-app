@@ -1,7 +1,7 @@
 import degit from "degit";
 
 export async function scaffold() {
-  const emitter = degit("your-username/your-template-repo", {
+  const emitter = degit("LIT-Protocol/create-la-app", {
     cache: false,
     force: true,
     verbose: true,
