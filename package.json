@@ -1,6 +1,6 @@
 {
   "name": "create-la-app",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "bin": {
     "create-la-app": "./scripts/scaffold-entry.js"
   },
