@@ -43,7 +43,8 @@ cp .env.example .env
 
 ## Available Scripts
 
-- `bun run dev` - Start development server with hot reloading
+- `bun run watch` - Start development server with hot reloading (save to trigger to run)
+- `bun run start` - Build the Lit Action and run your client app
 - `bun run build` - Build the Lit Action
 - `bun run cli` - Run the CLI tool
 

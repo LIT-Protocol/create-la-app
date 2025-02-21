@@ -1,13 +1,14 @@
 {
   "name": "create-la-app",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "bin": {
     "create-la-app": "./scripts/scaffold-entry.js"
   },
   "type": "module",
   "scripts": {
     "cli": "bun run scripts/cli.ts",
-    "dev": "chokidar './la-utils/**' './my-lit-action/**' './my-app/**' -c 'bun run build && bun run my-app/main.ts'",
+    "start": "bun run build && bun run my-app/main.ts",
+    "watch": "chokidar './la-utils/**' './my-lit-action/**' './my-app/**' -c 'bun run build && bun run my-app/main.ts'",
     "postbuild": "bun run ./scripts/postbuild.ts",
     "build": "bun build ./my-lit-action/lit-action.ts --outdir ./dist --entry-naming lit-action.js --format iife"
   },
