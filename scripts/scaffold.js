@@ -22,9 +22,9 @@ export async function scaffold(projectName = "lit-action-project") {
     console.log("\nNext steps:");
     console.log(`1. cd ${projectName}`);
     console.log("2. bun install");
-    console.log("2. cp .env.example .env");
-    console.log("3. bun run cli");
-    console.log("4. bun run watch or bun run start");
+    console.log("3. cp .env.example .env");
+    console.log("4. bun run cli");
+    console.log("5. bun run watch or bun run start");
     process.exit(0);
   } catch (err) {
     console.error("Error cloning template:", err);
