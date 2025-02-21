@@ -51,9 +51,9 @@ cp .env.example .env
 
 ## Project Structure
 
-- `/_config/` - Configuration files (Including your )
-- `/my-lit-action/` - Contains Lit Action source code
+- `/_config/` - Configuration files (results from the initial setup via the cli)
 - `/my-app/` - Application code
+- `/my-lit-action/` - Contains Lit Action source code
 - `/la-utils/` - Utility functions for Lit Actions
 - `/dist/` - Lit Action code string output
 
