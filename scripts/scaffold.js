@@ -22,6 +22,7 @@ export async function scaffold(projectName = "lit-action-project") {
     console.log("\nNext steps:");
     console.log(`1. cd ${projectName}`);
     console.log("2. bun install");
+    console.log("2. cp .env.example .env");
     console.log("3. bun run cli");
     process.exit(0);
   } catch (err) {
