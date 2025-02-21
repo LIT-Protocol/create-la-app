@@ -1,11 +1,10 @@
-import { yellowstoneConfig } from "../../la-chain/yellowstone/yellowstoneConfig";
 import { signTx } from "../primitive/signTx";
 import { sendTx } from "../primitive/sendTx";
 
 /**
  * Handler function for sending native tokens on the network
  * This function handles the preparation, signing, and sending of native token transactions
- * 
+ *
  * @param provider - The network provider instance
  * @param pkpPublicKey - The PKP public key for transaction signing
  * @param pkpEthAddress - The ethereum address derived from PKP
@@ -20,14 +19,14 @@ export const nativeSend = async ({
   amount,
   to,
 }: {
-  provider: any;
+  provider: InstanceType<typeof ethers.providers.JsonRpcProvider>;
   pkpPublicKey: string;
   pkpEthAddress: string;
   amount: string;
   to?: string;
 }) => {
   const recipientAddress = to || pkpEthAddress;
-  
+
   // Get transaction parameters
   const nonce = await provider.getTransactionCount(pkpEthAddress);
   const gasLimit = await provider.estimateGas({
@@ -44,7 +43,7 @@ export const nativeSend = async ({
     gasLimit: gasLimit,
     gasPrice: gasPrice,
     nonce: nonce,
-    chainId: yellowstoneConfig.id,
+    chainId: (await provider.getNetwork()).chainId,
   };
 
   // Sign transaction
@@ -57,4 +56,4 @@ export const nativeSend = async ({
   // Send transaction
   const txHash = await sendTx(provider, signedTxSignature);
   return txHash;
-}; 
+};
