@@ -4,10 +4,23 @@ A development environment for building and testing Lit Protocol Actions. This pr
 
 ## Features
 
-- TypeScript support out of the box
-- Built-in Lit Protocol integration
-- Development environment with hot reloading
-- Scaffold tools for quick project setup
+### TypeScript support out of the box for Lit Actions
+
+![TypeScript Support](./screenshots/ts.gif)
+
+### CLI for basic setup to run Lit Action
+
+![TypeScript Support](./screenshots/cli.png)
+
+### Built-in Lit Action utilities (more coming soon!)
+
+![TypeScript Support](./screenshots/utils.png)
+
+### Development environment with hot reloading
+
+![TypeScript Support](./screenshots/anon.gif)
+
+- Scaffold tools for quick project setup (via `npx create-la-app@latest`)
 - Support for multiple networks (datil-dev, datil-test, datil)
 
 ## Prerequisites
@@ -18,16 +31,19 @@ A development environment for building and testing Lit Protocol Actions. This pr
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 npx create-la-app@latest my-la-app
 ```
 
 2. Install dependencies:
+
 ```bash
 bun install
 ```
 
 3. Set up environment variables:
+
 ```bash
 cp .env.example .env
 # Edit .env with your configuration
@@ -39,7 +55,7 @@ cp .env.example .env
 - `/my-lit-action/` - Contains Lit Action source code
 - `/my-app/` - Application code
 - `/la-utils/` - Utility functions for Lit Actions
-- `/dist/` - Lit Action code string output 
+- `/dist/` - Lit Action code string output
 
 ## Available Scripts
 
@@ -51,6 +67,7 @@ cp .env.example .env
 ## Development
 
 The project uses Bun as the primary runtime environment. The development server watches for changes in the following directories:
+
 - `./la-utils/`
 - `./my-lit-action/`
 - `./my-app/`
