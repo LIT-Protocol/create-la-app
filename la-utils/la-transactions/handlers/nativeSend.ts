@@ -31,6 +31,7 @@ export const nativeSend = async ({
   const nonce = await provider.getTransactionCount(fromAddress);
   
   const gasLimit = await provider.estimateGas({
+    from: fromAddress,
     to: recipientAddress,
     value: ethers.utils.parseEther(amount),
   });
