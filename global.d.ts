@@ -364,7 +364,7 @@ declare namespace Lit {
      * @param {boolean} params.waitForResponse Whether to wait for a response or not - if false, the function will return immediately.
      * @param {string} params.name A unique name for this run
      * @param {Function} async_fn The async function to run
-     * @returns {Promise<boolean>} Whether the node can run the code in the next block or not.
+     * @returns {Promise<string>} Whether the node can run the code in the next block or not.
      */
     function runOnce(
       {
@@ -375,7 +375,7 @@ declare namespace Lit {
         name: string;
       },
       async_fn: () => Promise<any>
-    ): Promise<boolean>;
+    ): Promise<string>;
 
     /**
      * Get the RPC URL for a chain
