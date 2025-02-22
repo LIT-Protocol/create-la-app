@@ -8,7 +8,8 @@ export const sendTx = async (
   signedTx: string
 ): Promise<string> => {
   console.log("Broadcasting transaction...");
-  const txHash = await Lit.Actions.runOnce(
+
+  const responseText = await Lit.Actions.runOnce(
     { waitForResponse: true, name: "txnSender" },
     async () => {
       try {
@@ -17,14 +18,20 @@ export const sendTx = async (
         return receipt.hash;
       } catch (error) {
         console.error("Error broadcasting transaction:", error);
-        throw error;
+        return JSON.stringify(error);
       }
     }
   );
+
+  if (responseText.includes("error")) {
+    throw new Error(responseText);
+  }
+
+  const txHash = responseText;
 
   if (!ethers.utils.isHexString(txHash)) {
     throw new Error(`Invalid transaction hash: ${txHash}`);
   }
 
-  return String(txHash);
+  return txHash;
 };
