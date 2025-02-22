@@ -15,20 +15,18 @@ import { sendTx } from "../primitive/sendTx";
 export const nativeSend = async ({
   provider,
   pkpPublicKey,
-  pkpEthAddress,
   amount,
   to,
 }: {
   provider: InstanceType<typeof ethers.providers.JsonRpcProvider>;
   pkpPublicKey: string;
-  pkpEthAddress: string;
   amount: string;
-  to?: string;
+  to: string;
 }) => {
-  const recipientAddress = to || pkpEthAddress;
+  const recipientAddress = to;
 
   // Get transaction parameters
-  const nonce = await provider.getTransactionCount(pkpEthAddress);
+  const nonce = await provider.getTransactionCount(to);
   const gasLimit = await provider.estimateGas({
     to: recipientAddress,
     value: ethers.utils.parseEther(amount),

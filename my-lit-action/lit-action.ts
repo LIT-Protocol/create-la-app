@@ -29,7 +29,7 @@ declare global {
   const txHash = await nativeSend({
     provider,
     pkpPublicKey: params.pkpPublicKey,
-    pkpEthAddress,
+    to: pkpEthAddress,
     amount: "0.0001",
   });
 
