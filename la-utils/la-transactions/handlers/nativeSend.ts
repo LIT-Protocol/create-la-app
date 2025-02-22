@@ -1,5 +1,6 @@
 import { signTx } from "../primitive/signTx";
 import { sendTx } from "../primitive/sendTx";
+import { toEthAddress } from "../../la-pkp/toEthAddress";
 
 /**
  * Handler function for sending native tokens on the network
@@ -23,10 +24,12 @@ export const nativeSend = async ({
   amount: string;
   to: string;
 }) => {
+  const fromAddress = toEthAddress(pkpPublicKey);
   const recipientAddress = to;
 
   // Get transaction parameters
-  const nonce = await provider.getTransactionCount(to);
+  const nonce = await provider.getTransactionCount(fromAddress);
+  
   const gasLimit = await provider.estimateGas({
     to: recipientAddress,
     value: ethers.utils.parseEther(amount),
@@ -53,5 +56,6 @@ export const nativeSend = async ({
 
   // Send transaction
   const txHash = await sendTx(provider, signedTxSignature);
+
   return txHash;
 };
