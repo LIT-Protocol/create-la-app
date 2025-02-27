@@ -31,6 +31,7 @@
     "inquirer": "^12.4.2",
     "json-with-bigint": "^2.4.2",
     "pino-caller": "^3.4.0",
+    "viem": "^2.23.5",
     "zod": "^3.24.2"
   }
 }

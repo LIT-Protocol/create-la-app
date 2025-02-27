@@ -2,9 +2,9 @@ import { signAuthorization } from "../primitive/signAuthorization";
 import { toEthAddress } from "../../la-pkp/toEthAddress";
 
 /**
- * Handler function for EIP-7702 authorization signing
- * This function provides a high-level interface for generating EIP-7702 compliant authorization tuples
- * 
+ * Handler function for EIP-7702 authorization signing using PKP
+ * This function provides a high-level interface for generating EIP-7702 compliant authorization tuples using PKP
+ *
  * @param {Object} params - The parameters object
  * @param {string} params.pkpPublicKey - The PKP's public key
  * @param {string} params.targetAddress - The address being authorized
@@ -46,6 +46,6 @@ export const signEip7702Auth = async ({
   // Return authorization tuple with signer address
   return {
     ...authTuple,
-    signer: signerAddress
+    signer: signerAddress,
   };
-}; 
+};
